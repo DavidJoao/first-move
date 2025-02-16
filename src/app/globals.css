@@ -20,6 +20,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.spinner_P7sC{transform-origin:center;animation:spinner_svv2 .75s infinite linear}@keyframes spinner_svv2{100%{transform:rotate(360deg)}}
+
 @layer components {
   .button {
     @apply bg-gradient-to-t from-blue-500 to-blue-600 hover:from-blue-700 hover:to-blue-800 font-semibold p-3 rounded text-neutral-100
@@ -29,5 +31,8 @@ body {
   }
   .gray-gradient-title {
     @apply bg-gradient-to-t from-neutral-300 to-neutral-400 bg-clip-text text-transparent font-black
+  }
+  .input {
+    @apply rounded p-2 bg-neutral-900 border-[1px] border-neutral-600 focus:outline-neutral-400
   }
 }
