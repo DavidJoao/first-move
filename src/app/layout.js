@@ -12,17 +12,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "First Move",
-  description: "Start planning your next trip.",
+  title: "ScenarioGPT",
+  description: "Don't wait to translate every phrase you will need in your trip.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)]`}
-        suppressHydrationWarning
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)]`} suppressHydrationWarning>
         {children}
       </body>
     </html>
