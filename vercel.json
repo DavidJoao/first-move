@@ -1,0 +1,7 @@
+{
+    "functions": {
+      "api/sendData.js": {
+        "timeout": 60
+      }
+    }
+  }
