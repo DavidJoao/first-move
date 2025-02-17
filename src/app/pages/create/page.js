@@ -58,6 +58,7 @@ const page = () => {
             }
         } catch (error) {
             handleError()
+            setIsLoading(false)
         }
     }
 
