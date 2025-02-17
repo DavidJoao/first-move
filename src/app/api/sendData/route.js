@@ -3,7 +3,6 @@ import OpenAI from "openai";
 
 export async function POST (req, res) {
     const { data } = await req.json();
-    const text = `Look up when is ideal to go to ${data.arrival} from ${data.departure} for ${data.duration} for ${data.partyNo} person/people if I want to save money in flights and hotels, include a list with prices of 5 cheapest hotels in thise specific dates, and 5 hotels that have better reviews for those same dates, also include average of money spent by day for food, if there's more than one person make sure to look up rooms for that amount of people and when you give me the average divide the price for each person, include the minimun I have to save per week for minimun flights, hotel and food until the date you give me comes, and send me all the data in JSON object. if there's a note, make a property named "note". Note: ${data.note}. Answer with the object, only properties, no more.`
 
     const token = process.env.AI_TOKEN;
     const client = new OpenAI({ 
@@ -13,8 +12,16 @@ export async function POST (req, res) {
 
     const response = await client.chat.completions.create({
         messages: [
-          { role:"system", content: "" },
-          { role:"user", content: text }
+          { role:"system", content: 
+            `You are a helpful assistant that returns all the possible questions and answers in an normal interaction of the given scenario.
+            Return them in both english and the language provided by the user. Before each question in english put "EQ:" and before each
+            question in the provided language put "TQ:". Before each answer in English put "EA:" and before each answer in the provided language put "TA:".
+            If there's multiple possible answers you can include them, is optional, in the same answer but separated with a "|" and two spaces between. 
+            Return everyting in a JSON Object without any other text, ready to parse, each question named question1, question2 and successively. Minimum 20 questions.
+            Make sure to include commas after each question or answer to ensure a valid json parsing` },
+          { role:"user", content: 
+            `I am going to ${data.scenario} and they speak in ${data.language}, I want to know the typical questions and answers in this interaction before I go`
+           }
         ],
         model: "gpt-4o",
         temperature: 1,
