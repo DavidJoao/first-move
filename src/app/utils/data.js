@@ -120,3 +120,9 @@ export const exampleData = {
     "TA": "Sí, se ve genial. ¡Gracias!"
   }
 }
+
+export const dataArray = Object.values(exampleData).map(value => {
+  return {
+      ...value,
+  };
+});

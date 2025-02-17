@@ -5,7 +5,8 @@ import { motion } from 'framer-motion'
 import { languages } from '@/app/utils/languages'
 import { sendData } from '@/app/actions/chatGTP'
 import Loader from '@/app/components/Loader'
-import { exampleData } from '@/app/utils/data'
+import { dataArray } from '@/app/utils/data'
+import { toast } from 'sonner'
 
 
 const page = () => {
@@ -20,12 +21,7 @@ const page = () => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        const mappedArray = Object.values(exampleData).map(value => {
-            return {
-                ...value,
-            };
-        });
-        setData(mappedArray)
+        setData(dataArray)
     }, [])
 
     const handleChange = (e) => {
@@ -36,26 +32,32 @@ const page = () => {
         }))
     }
 
+    const handleError = async () => {
+        setForm(initialForm)
+        setData(dataArray)
+        toast("There was an error processing your request", {
+            description: "Please, try again.",
+            className: "bg-red-600 text-white"
+        })
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true)
-        const response = await sendData(form);
-        if (response.status === 200) {
-            setIsLoading(false)
 
-            const cleanedJSON = response?.data?.data.replace(/^```json\s*/, '').replace(/\s*```.*$/, '').trim();
-            const parsedData = JSON.parse(cleanedJSON);
-            const mappedArray = Object.values(parsedData).map(value => {
-                return {
-                    ...value,
-                };
-            });
-
-            setData(mappedArray)
-            setForm((prevForm) => ({
-                ...prevForm,
-                ["scenario"]: ""
-            }))
+        try {
+            const response = await sendData(form);
+            if (response.status === 200) {
+                setIsLoading(false)
+    
+                setData(response?.data?.data)
+                setForm((prevForm) => ({
+                    ...prevForm,
+                    ["scenario"]: ""
+                }))
+            }
+        } catch (error) {
+            handleError()
         }
     }
 
