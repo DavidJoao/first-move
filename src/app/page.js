@@ -1,6 +1,6 @@
 'use client'
 
-import { navigate } from "./lib/navigate"
+import Link from "next/link"
 import { motion } from "framer-motion"
 
 export default function Home() {
@@ -9,14 +9,15 @@ export default function Home() {
             key="box"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
             >
             <div className="flex flex-col items-center justify-center min-h-screen text-center p-3 bg-zinc-900">
-                <h1 className="blue-gradient-title text-[45px] lg:text-[65px]">First Move</h1>
+                <h1 className="blue-gradient-title text-[45px] lg:text-[65px]">ScenarioGPT</h1>
                 <div className="flex flex-col gap-1">
-                    <h1 className="gray-gradient-title text-[25px] lg:text-[45px]">Make the trip happen</h1>
+                    <h1 className="gray-gradient-title text-[25px] lg:text-[45px]">Every Scenario? Understood.</h1>
                     <p className="text-neutral-300">Start your journey with confidence, powered by AI.</p>
-                    <button className="button" onClick={() => navigate('/pages/plan')}>Start now</button>
+                    <Link className="button" href={"/pages/create"}>Start now</Link>
                 </div>
             </div>
         </motion.div>
