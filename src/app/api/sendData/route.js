@@ -18,8 +18,7 @@ export async function POST (req, res) {
             question in the provided language put "TQ:". Before each answer in English put "EA:" and before each answer in the provided language put "TA:".
             If there's multiple possible answers you can include them, is optional, in the same answer but separated with a "|" and two spaces between. 
             Return everyting in a JSON Object without any other text, ready to parse, each question named question1, question2 and successively. Only 20 questions.
-            Make sure to include commas after each question or answer to ensure a valid json parsing. If the information provided has nothing to do with our mission, 
-            return the word "error", just that.` },
+            Make sure to include commas after each question or answer to ensure a valid json parsing.` },
           { role:"user", content: 
             `I am going to ${data.scenario} and they speak in ${data.language}, I want to know the typical questions and answers in this interaction before I go`
            }
