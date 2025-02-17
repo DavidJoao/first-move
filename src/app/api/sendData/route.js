@@ -25,7 +25,7 @@ export async function POST (req, res) {
         ],
         model: "gpt-4o",
         temperature: 1,
-        max_tokens: 1024,
+        max_tokens: 4096,
         top_p: 1
       });
 
