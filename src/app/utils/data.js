@@ -1,125 +1,95 @@
-export const exampleData = {
-  "question1": {
-    "EQ": "How would you like your hair cut?",
-    "TQ": "¿Cómo le gustaría que le cortaran el cabello?",
-    "EA": "I would like a short trim, please.",
-    "TA": "Me gustaría un corte corto, por favor."
+export const exampleData = [
+  {
+      "EQ": "¿Qué tipo de café te gustaría?",
+      "EA": "Un café negro, por favor. | Un café con leche, por favor. | Un cappuccino, por favor. | Un latte, por favor. | Un americano, por favor.",
+      "TQ": "What type of coffee would you like?",
+      "TA": "A black coffee, please. | A coffee with milk, please. | A cappuccino, please. | A latte, please. | An americano, please."
   },
-  "question2": {
-    "EQ": "What kind of style are you looking for?",
-    "TQ": "¿Qué tipo de estilo está buscando?",
-    "EA": "Something modern but simple.",
-    "TA": "Algo moderno pero sencillo."
+  {
+      "EQ": "¿Lo quieres caliente o frío?",
+      "EA": "Caliente, por favor. | Frío, por favor.",
+      "TQ": "Do you want it hot or cold?",
+      "TA": "Hot, please. | Cold, please."
   },
-  "question3": {
-    "EQ": "Do you want to keep the current length?",
-    "TQ": "¿Quiere mantener el largo actual?",
-    "EA": "No, please make it a bit shorter.",
-    "TA": "No, por favor hágalo un poco más corto."
+  {
+      "EQ": "¿Qué tamaño quieres? ¿Pequeño, mediano o grande?",
+      "EA": "Pequeño, por favor. | Mediano, por favor. | Grande, por favor.",
+      "TQ": "What size would you like? Small, medium, or large?",
+      "TA": "Small, please. | Medium, please. | Large, please."
   },
-  "question4": {
-    "EQ": "Would you like layers?",
-    "TQ": "¿Le gustaría capas?",
-    "EA": "Yes, I think layers would look good.",
-    "TA": "Sí, creo que las capas se verían bien."
+  {
+      "EQ": "¿Quieres azúcar o endulzante?",
+      "EA": "Azúcar, por favor. | Endulzante, por favor. | No, gracias.",
+      "TQ": "Do you want sugar or sweetener?",
+      "TA": "Sugar, please. | Sweetener, please. | No, thank you."
   },
-  "question5": {
-    "EQ": "Do you want bangs or a fringe?",
-    "TQ": "¿Quiere flequillo?",
-    "EA": "No, I don’t think I want bangs.",
-    "TA": "No, creo que no quiero flequillo."
+  {
+      "EQ": "¿Con leche entera, deslactosada, de almendra o de soya?",
+      "EA": "Con leche entera, por favor. | Con leche deslactosada, por favor. | Con leche de almendra, por favor. | Con leche de soya, por favor.",
+      "TQ": "With whole milk, lactose-free milk, almond milk, or soy milk?",
+      "TA": "With whole milk, please. | With lactose-free milk, please. | With almond milk, please. | With soy milk, please."
   },
-  "question6": {
-    "EQ": "How about the sides? Short or long?",
-    "TQ": "¿Y los lados? ¿Cortos o largos?",
-    "EA": "Short on the sides, please.",
-    "TA": "Cortos en los lados, por favor."
+  {
+      "EQ": "¿Deseas algún sabor adicional, como vainilla o caramelo?",
+      "EA": "Vainilla, por favor. | Caramelo, por favor. | No, gracias.",
+      "TQ": "Do you want any additional flavor, like vanilla or caramel?",
+      "TA": "Vanilla, please. | Caramel, please. | No, thank you."
   },
-  "question7": {
-    "EQ": "Would you like the back tapered?",
-    "TQ": "¿Quiere que la parte de atrás esté desvanecida?",
-    "EA": "Yes, I’d like the back tapered.",
-    "TA": "Sí, me gustaría que la parte de atrás estuviera desvanecida."
+  {
+      "EQ": "¿Para tomar aquí o para llevar?",
+      "EA": "Para tomar aquí, por favor. | Para llevar, por favor.",
+      "TQ": "For here or to go?",
+      "TA": "For here, please. | To go, please."
   },
-  "question8": {
-    "EQ": "Do you want a fade or just a straight cut?",
-    "TQ": "¿Quiere un degradado o un corte recto?",
-    "EA": "I’d prefer a fade.",
-    "TA": "Prefiero un degradado."
+  {
+      "EQ": "¿Te gustaría algo más? ¿Un pan o un postre para acompañar?",
+      "EA": "Sí, un pan, por favor. | Sí, un postre, por favor. | No, gracias.",
+      "TQ": "Would you like anything else? A bread or dessert to accompany?",
+      "TA": "Yes, a bread, please. | Yes, a dessert, please. | No, thank you."
   },
-  "question9": {
-    "EQ": "How about the top? Leave it longer?",
-    "TQ": "¿Qué hay del cabello de arriba? ¿Lo dejamos más largo?",
-    "EA": "Yes, leave it a bit longer on top.",
-    "TA": "Sí, déjelo un poco más largo arriba."
+  {
+      "EQ": "¿Cuántas dosis de espresso deseas?",
+      "EA": "Una, por favor. | Dos, por favor. | Tres, por favor.",
+      "TQ": "How many shots of espresso would you like?",
+      "TA": "One, please. | Two, please. | Three, please."
   },
-  "question10": {
-    "EQ": "Would you like a shampoo wash before the haircut?",
-    "TQ": "¿Le gustaría un lavado con champú antes del corte?",
-    "EA": "Yes, a shampoo wash would be great.",
-    "TA": "Sí, un lavado con champú estaría bien."
+  {
+      "EQ": "¿Con crema batida?",
+      "EA": "Sí, por favor. | No, gracias.",
+      "TQ": "With whipped cream?",
+      "TA": "Yes, please. | No, thank you."
   },
-  "question11": {
-    "EQ": "Would you like to use scissors or clippers?",
-    "TQ": "¿Prefiere que use tijeras o máquina?",
-    "EA": "Scissors, please.",
-    "TA": "Tijeras, por favor."
+  {
+      "EQ": "¿Quieres agua o hielo extra?",
+      "EA": "Agua extra, por favor. | Hielo extra, por favor. | No, gracias.",
+      "TQ": "Do you want extra water or ice?",
+      "TA": "Extra water, please. | Extra ice, please. | No, thank you."
   },
-  "question12": {
-    "EQ": "Do you want to keep your sideburns?",
-    "TQ": "¿Quiere conservar las patillas?",
-    "EA": "Yes, please leave the sideburns.",
-    "TA": "Sí, por favor deje las patillas."
+  {
+      "EQ": "¿Te gustaría añadir canela o cacao encima?",
+      "EA": "Canela, por favor. | Cacao, por favor. | No, gracias.",
+      "TQ": "Would you like to add cinnamon or cocoa on top?",
+      "TA": "Cinnamon, please. | Cocoa, please. | No, thank you."
   },
-  "question13": {
-    "EQ": "Should I shave your neckline?",
-    "TQ": "¿Quiere que rasure la línea del cuello?",
-    "EA": "Yes, please shave the neckline.",
-    "TA": "Sí, por favor rasure la línea del cuello."
+  {
+      "EQ": "¿Es todo por ahora?",
+      "EA": "Sí, eso es todo, gracias. | No, también quiero añadir algo más.",
+      "TQ": "Is that all for now?",
+      "TA": "Yes, that's all, thank you. | No, I would also like to add something else."
   },
-  "question14": {
-    "EQ": "Would you like any product in your hair afterward?",
-    "TQ": "¿Quiere que le ponga algún producto en el cabello después?",
-    "EA": "Yes, some gel or wax would be nice.",
-    "TA": "Sí, un poco de gel o cera estaría bien."
+  {
+      "EQ": "¿Cómo deseas pagar? ¿Con efectivo o tarjeta?",
+      "EA": "Con efectivo, por favor. | Con tarjeta, por favor.",
+      "TQ": "How would you like to pay? With cash or card?",
+      "TA": "With cash, please. | With card, please."
   },
-  "question15": {
-    "EQ": "Would you like me to trim your beard as well?",
-    "TQ": "¿Quiere que también recorte su barba?",
-    "EA": "Yes, please trim my beard.",
-    "TA": "Sí, por favor recorte mi barba."
-  },
-  "question16": {
-    "EQ": "Do you want your beard shaped or just shortened?",
-    "TQ": "¿Quiere que le dé forma a la barba o solo que la acorte?",
-    "EA": "Just shortened, please.",
-    "TA": "Solo que la acorte, por favor."
-  },
-  "question17": {
-    "EQ": "Would you like a straight razor finish?",
-    "TQ": "¿Quiere un acabado con navaja?",
-    "EA": "Yes, I’d like that.",
-    "TA": "Sí, me gustaría eso."
-  },
-  "question18": {
-    "EQ": "How often do you usually get a haircut?",
-    "TQ": "¿Con qué frecuencia suele cortarse el cabello?",
-    "EA": "Every three to four weeks.",
-    "TA": "Cada tres o cuatro semanas."
-  },
-  "question19": {
-    "EQ": "Is this your first time here?",
-    "TQ": "¿Es la primera vez que viene aquí?",
-    "EA": "Yes, this is my first time.",
-    "TA": "Sí, es mi primera vez."
-  },
-  "question20": {
-    "EQ": "Are you happy with the haircut?",
-    "TQ": "¿Está satisfecho con el corte de cabello?",
-    "EA": "Yes, it looks great. Thank you!",
-    "TA": "Sí, se ve genial. ¡Gracias!"
+  {
+      "EQ": "¿Quieres el recibo?",
+      "EA": "Sí, por favor. | No, gracias.",
+      "TQ": "Do you want the receipt?",
+      "TA": "Yes, please. | No, thank you."
   }
-}
+]
 
 export const dataArray = Object.values(exampleData).map(value => {
   return {

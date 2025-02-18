@@ -49,12 +49,18 @@ const page = () => {
             const response = await sendData(form);
             if (response.status === 200) {
                 setIsLoading(false)
+                console.log(response.data)
     
                 setData(response?.data?.data)
                 setForm((prevForm) => ({
                     ...prevForm,
                     ["scenario"]: ""
                 }))
+
+                toast("Success", {
+                    description: "Questions generated successfully!.",
+                    className: "bg-green-600 text-white"
+                })
             }
         } catch (error) {
             handleError()
@@ -99,13 +105,13 @@ const page = () => {
                         return (
                             <div key={index} className='flex flex-col gap-2 rounded-lg border-[1px] p-5 border-neutral-700 bg-neutral-800 shadow-lg hover:shadow-xl transition-shadow duration-300 m-5 w-full md:w-[50%]    '>
                             <div className='text-left text-lg text-white'>
-                                <p className='text-xl text-neutral-100 font-semibold'>{question.TQ}</p>
-                                <p className='text-lg text-neutral-400'>{question.EQ}</p>
+                                <p className='text-xl text-neutral-100 font-semibold'>{question.EQ}</p>
+                                <p className='text-lg text-neutral-400'>{question.TQ}</p>
                             </div>
 
                             <div className='text-left'>
-                                <p className='text-lg text-green-500 font-semibold'>{question.TA}</p>
-                                <p className='text-lg text-neutral-400'>{question.EA}</p>
+                                <p className='text-lg text-green-500 font-semibold'>{question.EA}</p>
+                                <p className='text-lg text-neutral-400'>{question.TA}</p>
                             </div>
                             </div>
                         )

@@ -14,11 +14,12 @@ export async function POST (req, res) {
         messages: [
           { role:"system", content: 
             `You are a helpful assistant that returns all the possible questions and answers in an normal interaction of the given scenario.
-            Return them in both english and the language provided by the user. Before each question in english put "EQ:" and before each
-            question in the provided language put "TQ:". Before each answer in English put "EA:" and before each answer in the provided language put "TA:".
+            Return them in both the language typed in the scenario (${data.scenario}) and the language provided by the user. Before each question in scenario put "EQ:" 
+            and before each question in the provided language put "TQ:". Before each answer in the scenario put "EA:" and before each answer in the provided language put "TA:".
             If there's multiple possible answers you can include them, is optional, in the same answer but separated with a "|" and two spaces between. 
-            Return everyting in a JSON Object without any other text, ready to parse, each question named question1, question2 and successively. Only 10 questions.
-            Make sure to include commas after each question or answer to ensure a valid json parsing.` },
+            Return everyting in a JSON Object without any other text, ready to parse, each question named question1, question2 and successively. Only 13 questions.
+            Make sure to include commas after each question or answer to ensure a valid json parsing. Remember that the questions are from the other person and 
+            the possible answers for the user.` },
           { role:"user", content: 
             `I am going to ${data.scenario} and they speak in ${data.language}, I want to know the typical questions and answers in this interaction before I go`
            }
